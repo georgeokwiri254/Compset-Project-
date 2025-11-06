@@ -1,0 +1,176 @@
+New chat
+All projects
+Compset Analysis Tool
+Analyse compset based and suggest a better compset.
+
+How can I help you today?
+
+
+
+
+
+
+Grand Millennium Dubai competitive set analysis
+Last message 12 minutes ago
+Instructions
+--- 🏨 Revenue Manager Prompt: Competitor Set Analysis for Strategic Positioning. I will upload a compset analysis toolkit, search the web for hotel features and rank at least 10 hotels which should be in my compset. Fill in the excel sheet do the calculations search for the data online and output as an excel sheet file. Objective: Evaluate and recommend the most accurate competitor set for [Grand Millennium], ensuring alignment with our property’s market positioning, room mix, meeting capacity, guest profile, and online reputation. The goal is to identify hotels that directly compete with us in pricing, product, and perception, enabling accurate benchmarking of ADR, RevPAR, and rate strategy. --- 1. Market Positioning & Brand Fit Identify hotels within a 5–7 km radius competing in the same luxury/upscale business segment. Compare brand strength, star rating, and location advantages. Evaluate accessibility to business hubs, attractions, and key demand generators. --- 2. Room Inventory & Mix Analysis Compare the number and range of room types (standard, deluxe, club, suites, apartments). Assess average room sizes, in-room features, and furnishing quality. Analyze price positioning and ADR benchmarks for each comparable room category. Evaluate room type segmentation — corporate, long-stay, leisure, and family suitability. --- 3. Meetings & Events Capability Identify hotels with comparable meeting and event space (sqm, number of rooms, capacity). Note banquet flexibility, ballroom capacity, and technology/AV offerings. Review MICE reviews and ratings from corporate clients and planners. Evaluate potential overlap in target accounts or event segments. --- 4. Online Reputation & Review Sentiment Extract guest reviews from platforms like TripAdvisor, Booking.com, and Google. Perform sentiment analysis on service, cleanliness, breakfast, and staff experience. Rank competitors by average rating and review volume to assess brand perception. Identify key differentiators driving guest satisfaction and repeat business. --- 5. Features & Amenities Evaluation Benchmark facilities such as pool, spa, gym, restaurants, and executive lounges. Review unique amenities (private cinema, serviced apartments, rooftop bar, etc.) that enhance guest value and ADR potential. Include sustainability programs or digital technology features that appeal to modern travelers. --- 6. Pricing & Distribution Review Track rate parity and OTA positioning over the last 30–60 days. Evaluate BAR strategy, corporate rates, and long-stay pricing. Compare package inclusions (breakfast, lounge access, airport transfers). Assess dynamic rate adjustments versus market movement using historical data. --- 7. Segmentation & Demand Mix Identify business segments driving demand for each property (corporate, MICE, leisure, OTA, direct). Determine which competitors attract similar accounts or market sources. Highlight opportunities for displacement, rate growth, or share gain. --- 8. Data Output Requirements Deliver a comparison matrix summarizing: Room types & counts Event spaces (sqm, capacity) Review score averages Key features & differentiators ADR and rate range Rank the Top 5–7 Competitors with a justification summary. Include recommendations for primary (core) and secondary (stretch) compsets. --- 9. Strategic Outcome The analysis should enable the Revenue Team to: Validate the current compset relevance. Identify any new emerging competitors or non-traditional threats. Support rate positioning, forecast accuracy, and market share strategy. Provide inputs for monthly rate strategy meetings and business reviews. --- Example Command for an AI or Analyst: > “Act as a Revenue Manager for Grand Millennium Dubai. Based on location, room mix, meeting capacity, and online reviews, identify the most comparable hotels in Barsha Heights and Sheikh Zayed Road. Create a ranked compset list with key metrics, review sentiment, and pricing strategy insights.” --- Would you like me to extend this prompt into a data-collection version — where an AI automatically scrapes and compares competitor data (reviews, features, ADRs, event spaces, etc.) for you?
+
+Files
+29% of project capacity used
+Retrieving
+
+Compset by distance
+1,062 lines
+
+text
+
+
+
+Hospitality Revenue Management Concepts and Practices (Peter Szende) (Z-Library).pdf
+18,544 lines
+
+pdf
+
+
+
+Revenue Management in the Lodging Industry Origins to the Last Frontier (Ben Vinod) (Z-Library).pdf
+18,376 lines
+
+pdf
+
+
+
+Hotel Revenue Management The Post-Pandemic Evolution to Revenue Strategy (Dave Roberts) (Z-Library).pdf
+4,084 lines
+
+pdf
+
+
+
+Compset Analysis Metrics
+109 lines
+
+text
+
+
+
+Product Knowledge Grand Millennium JSON format
+151 lines
+
+text
+
+
+Claude
+Compset Analysis Metrics
+6.84 KB •109 lines
+•
+Formatting may be inconsistent from source
+{
+  "compset_analysis": {
+    "hotel_reference": {
+      "name": "Grand Millennium Dubai",
+      "star_rating": 5,
+      "location": "Barsha Heights, Sheikh Zayed Road, Dubai",
+      "total_rooms": 339,
+      "apartments": 132,
+      "executive_lounge": true,
+      "benchmark_year": 2025
+    },
+    "evaluation_categories": [
+      {
+        "category": "Property & Brand Positioning",
+        "metrics": [
+          { "name": "star_rating", "description": "Hotel classification level", "benchmark": "±0.5", "weight": 0.05 },
+          { "name": "brand_tier_affiliation", "description": "Global or local brand strength and loyalty programs", "benchmark": "same tier", "weight": 0.06 },
+          { "name": "location_proximity_km", "description": "Distance from target hotel", "benchmark": "<=5 km", "weight": 0.07 },
+          { "name": "target_market_segment", "description": "Overlap of core demand segments (corporate, leisure, MICE)", "benchmark": ">=60% overlap", "weight": 0.06 },
+          { "name": "average_rate_positioning", "description": "ADR comparison to reference property", "benchmark": "±10-15%", "weight": 0.06 },
+          { "name": "review_index_rating", "description": "Online reputation comparison (TripAdvisor/Booking.com)", "benchmark": "±0.2 points", "weight": 0.05 }
+        ]
+      },
+      {
+        "category": "Room Mix & Inventory",
+        "metrics": [
+          { "name": "total_room_count", "description": "Comparable room inventory scale", "benchmark": "±20%", "weight": 0.05 },
+          { "name": "room_type_variety", "description": "Similarity in room category distribution", "benchmark": ">=70% similarity", "weight": 0.05 },
+          { "name": "apartment_ratio", "description": "Proportion of serviced apartments", "benchmark": "±10% ratio", "weight": 0.05 },
+          { "name": "executive_lounge", "description": "Availability of premium club lounge", "benchmark": "match required", "weight": 0.04 },
+          { "name": "average_room_size_sqm", "description": "Comparable room size range", "benchmark": "±15%", "weight": 0.04 }
+        ]
+      },
+      {
+        "category": "Meetings & Events (MICE)",
+        "metrics": [
+          { "name": "total_event_space_sqm", "description": "Total available meeting and banquet space", "benchmark": "±25%", "weight": 0.06 },
+          { "name": "largest_ballroom_capacity", "description": "Comparable maximum event capacity", "benchmark": "±20%", "weight": 0.05 },
+          { "name": "meeting_room_count", "description": "Number of available breakout or boardrooms", "benchmark": "±20%", "weight": 0.05 },
+          { "name": "technology_level", "description": "AV, hybrid meeting, and internet infrastructure", "benchmark": "comparable", "weight": 0.04 }
+        ]
+      },
+      {
+        "category": "Online Reputation & Guest Sentiment",
+        "metrics": [
+          { "name": "average_review_score", "description": "TripAdvisor / Booking.com combined average", "benchmark": "±0.2 points", "weight": 0.05 },
+          { "name": "global_review_index", "description": "Normalized global sentiment score (TrustYou, ReviewPro)", "benchmark": "±5%", "weight": 0.05 },
+          { "name": "review_volume", "description": "Minimum number of reviews for reliability", "benchmark": ">1000 reviews", "weight": 0.03 },
+          { "name": "category_sentiment", "description": "Service, cleanliness, F&B, staff", "benchmark": "similar sentiment ratios", "weight": 0.04 }
+        ]
+      },
+      {
+        "category": "Pricing & Rate Strategy",
+        "metrics": [
+          { "name": "average_daily_rate", "description": "ADR benchmark per segment", "benchmark": "±15%", "weight": 0.06 },
+          { "name": "best_available_rate", "description": "BAR pricing alignment on key dates", "benchmark": "±10%", "weight": 0.05 },
+          { "name": "revpar", "description": "Revenue per available room comparison", "benchmark": "±10%", "weight": 0.05 },
+          { "name": "rate_parity_compliance", "description": "Consistency across channels", "benchmark": ">=95%", "weight": 0.04 }
+        ]
+      },
+      {
+        "category": "Demand & Market Segments",
+        "metrics": [
+          { "name": "business_mix_ratio", "description": "Corporate/Leisure/MICE split", "benchmark": ">=60% overlap", "weight": 0.05 },
+          { "name": "source_markets", "description": "Regional mix similarity (GCC, Europe, Asia)", "benchmark": ">=50% overlap", "weight": 0.04 },
+          { "name": "distribution_channels", "description": "OTA, GDS, Direct booking mix", "benchmark": ">=70% overlap", "weight": 0.04 },
+          { "name": "average_length_of_stay", "description": "LOS comparison", "benchmark": "±10%", "weight": 0.03 }
+        ]
+      },
+      {
+        "category": "Facilities & Amenities",
+        "metrics": [
+          { "name": "restaurant_bar_count", "description": "Number of F&B outlets", "benchmark": "±2 outlets", "weight": 0.04 },
+          { "name": "leisure_facilities", "description": "Pool, spa, gym availability", "benchmark": "match required", "weight": 0.04 },
+          { "name": "unique_features", "description": "USP offerings (cinema, rooftop, etc.)", "benchmark": "comparable value", "weight": 0.03 },
+          { "name": "sustainability_certification", "description": "Green or eco-program participation", "benchmark": "optional but favorable", "weight": 0.02 }
+        ]
+      },
+      {
+        "category": "Performance & Market Index (STR)",
+        "metrics": [
+          { "name": "occupancy_index_MPI", "description": "Occupancy vs. compset average", "benchmark": "0.9–1.1", "weight": 0.06 },
+          { "name": "adr_index_ARI", "description": "ADR vs. compset average", "benchmark": "0.9–1.1", "weight": 0.06 },
+          { "name": "revpar_index_RGI", "description": "RevPAR vs. compset average", "benchmark": "0.9–1.1", "weight": 0.06 },
+          { "name": "market_share_index", "description": "Revenue penetration index trend", "benchmark": "within ±0.1", "weight": 0.04 }
+        ]
+      },
+      {
+        "category": "Strategic Alignment",
+        "metrics": [
+          { "name": "brand_loyalty_strength", "description": "Membership power, distribution network", "benchmark": "same segment", "weight": 0.04 },
+          { "name": "pricing_consistency", "description": "Rate stability and yield discipline", "benchmark": "similar volatility", "weight": 0.03 },
+          { "name": "rms_utilization", "description": "Use of revenue management systems", "benchmark": "comparable", "weight": 0.03 },
+          { "name": "guest_perception_alignment", "description": "Customer expectation vs. price point", "benchmark": "match required", "weight": 0.04 }
+        ]
+      }
+    ],
+    "scoring": {
+      "method": "weighted_average",
+      "max_score": 100,
+      "interpretation": {
+        "90-100": "Ideal Compset Member",
+        "75-89": "Secondary Compset",
+        "60-74": "Extended Market Reference",
+        "Below 60": "Not Recommended"
+      }
+    }
+  }
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "id": 2,
+    "name": "Atana Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.14,
+    "address": "Hessa Street, Tecom, Al Thanyah 1, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 3,
+    "name": "Golden Tulip Media Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.18,
+    "address": "Hessa Street, Al Thanya 1, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 4,
+    "name": "Premier Inn Dubai Barsha Heights",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 0.5,
+    "address": "Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 5,
+    "name": "Ramee Rose Hotel",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 0.5,
+    "address": "TECOM business area, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 6,
+    "name": "Naumi Hotel Dubai",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.8,
+    "address": "Barsha Heights, facing Sheikh Zayed Road, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 7,
+    "name": "Millennium Place Barsha Heights Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.0,
+    "address": "1st Al Khail Street, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 8,
+    "name": "Millennium Place Barsha Heights Hotel Apartments",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.0,
+    "address": "1st Al Khail Street, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 9,
+    "name": "TRYP by Wyndham Dubai",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.7,
+    "address": "Barsha Heights (Tecom), Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 10,
+    "name": "Signature 1 Hotel Tecom",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.8,
+    "address": "Al Thanayah 1, Tecom, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 11,
+    "name": "Social Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.8,
+    "address": "Barsha Heights (Tecom), Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 12,
+    "name": "First Central Hotel Suites",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.2,
+    "address": "Al Saef 1 Street, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 13,
+    "name": "Time Oak Hotel & Suites",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.5,
+    "address": "Barsha Heights (Tecom), Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 14,
+    "name": "Grand Heights Dubai Hotel Apartments",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.2,
+    "address": "Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 15,
+    "name": "Mercure Dubai Barsha Heights Hotel Suites and Apartments",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 0.6,
+    "address": "Sheikh Zayed Road, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 16,
+    "name": "Ramada by Wyndham Dubai Barsha Heights",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.3,
+    "address": "Barsha Heights (Tecom), Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 17,
+    "name": "Citadines Metro Central Dubai",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.2,
+    "address": "Dubai Internet City, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 18,
+    "name": "Two Seasons Hotel & Apartments",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.5,
+    "address": "Barsha Heights area, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 19,
+    "name": "Grand Belle Vue Hotel Apartment",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 1.5,
+    "address": "Barsha Heights (Tecom), Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 20,
+    "name": "Gulf Oasis Hotel Apartments",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 1.5,
+    "address": "Tecom district, Barsha Heights, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 21,
+    "name": "Time Crystal Hotel Apartments",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 2.0,
+    "address": "Al Barsha area, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 22,
+    "name": "Signature Hotel Al Barsha",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 2.0,
+    "address": "Al Barsha/Barsha Heights area, Dubai",
+    "area": "Barsha Heights"
+  },
+  {
+    "id": 23,
+    "name": "Staybridge Suites Dubai Internet City",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.8,
+    "address": "Al Sufouh 2, Internet City, Sheikh Zayed Road, Dubai",
+    "area": "Dubai Internet City"
+  },
+  {
+    "id": 24,
+    "name": "Holiday Inn Express Dubai Internet City",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 1.8,
+    "address": "Knowledge Village, Dubai Internet City, Dubai",
+    "area": "Dubai Internet City"
+  },
+  {
+    "id": 25,
+    "name": "Class Hotel Apartments",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 1.3,
+    "address": "Near Dubai Internet City Metro Station, Dubai",
+    "area": "Dubai Internet City"
+  },
+  {
+    "id": 26,
+    "name": "Radisson Blu Hotel Dubai Media City",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 2.0,
+    "address": "Box 211723, Dubai Media City, Dubai",
+    "area": "Dubai Media City"
+  },
+  {
+    "id": 28,
+    "name": "Media One Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 2.4,
+    "address": "Dubai Media City, Plot No. 1, Dubai",
+    "area": "Dubai Media City"
+  },
+  {
+    "id": 29,
+    "name": "Arjaan by Rotana - Dubai Media City",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 2.6,
+    "address": "King Salman Bin Abdul Aziz Al Saud Street, Dubai Media City, Dubai",
+    "area": "Dubai Media City"
+  },
+  {
+    "id": 30,
+    "name": "Avani Plus Palm View Dubai Hotel & Suites",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 2.5,
+    "address": "Near Knowledge Village, Dubai",
+    "area": "Knowledge Village"
+  },
+  {
+    "id": 35,
+    "name": "Armada Avenue Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 2.9,
+    "address": "Armada Towers 2, Sheikh Zayed Road, Jumeirah Lakes Towers, Dubai",
+    "area": "Jumeirah Lake Towers"
+  },
+  {
+    "id": 36,
+    "name": "Oaks Liwa Heights",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 2.9,
+    "address": "Cluster W, Al Sarayat Street, Jumeirah Lakes Towers, Dubai",
+    "area": "Jumeirah Lake Towers"
+  },
+  {
+    "id": 44,
+    "name": "Millennium Place Dubai Marina",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 4.8,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 45,
+    "name": "Marina Byblos Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 46,
+    "name": "The First Collection Dubai Marina",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 4.9,
+    "address": "Al Seba Street, Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 47,
+    "name": "Dubai Marriott Harbour Hotel & Suites",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 48,
+    "name": "Vida Dubai Marina & Yacht Club",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 49,
+    "name": "Rove Dubai Marina",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 4.8,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 50,
+    "name": "Marina Hotel Apartments",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 4.9,
+    "address": "Dubai Marina (opposite DMCC Metro), Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 51,
+    "name": "Jannah Marina Hotel Apartments",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 5.0,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 52,
+    "name": "Jumeirah Living Marina Gate",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 4.9,
+    "address": "Dubai Marina Waterfront, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 53,
+    "name": "City Première Marina Hotel Apartments",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 4.9,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 54,
+    "name": "Marina View Deluxe Hotel Apartment",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 4.9,
+    "address": "Dubai Marina, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 57,
+    "name": "Barceló Residences Dubai Marina",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Dubai Marina area, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 58,
+    "name": "Jannah Place Dubai Marina",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Dubai Marina area, Dubai",
+    "area": "Dubai Marina"
+  },
+  {
+    "id": 81,
+    "name": "Millennium Al Barsha",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha 1, near Mall of the Emirates, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 82,
+    "name": "Studio M Al Barsha Hotel by Millennium",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Near Mall of the Emirates, Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 83,
+    "name": "Novotel Dubai Al Barsha",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 84,
+    "name": "Novotel Suites Mall Avenue Dubai",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Mall Avenue, Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 88,
+    "name": "Grand Cosmopolitan Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 89,
+    "name": "Citymax Hotel Al Barsha at the Mall",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 5.0,
+    "address": "Near Mall of the Emirates, Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 91,
+    "name": "Centro Barsha - by Rotana",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha district, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 92,
+    "name": "Holiday Inn Dubai - Al Barsha",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha 1, Sheikh Zayed Road, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 93,
+    "name": "Flora Al Barsha Hotel at the Mall",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Sheikh Zayed Road, Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 94,
+    "name": "Rose Park Hotel - Al Barsha",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Opposite Insurance Market Metro Station, Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 95,
+    "name": "Al Khoory Atrium",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 96,
+    "name": "Elite Byblos Hotel",
+    "star_rating": 4,
+    "category": "Upscale",
+    "distance_km": 5.0,
+    "address": "Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  },
+  {
+    "id": 97,
+    "name": "Ibis Mall Avenue Dubai",
+    "star_rating": 3,
+    "category": "Midscale",
+    "distance_km": 5.0,
+    "address": "Mall Avenue, Al Barsha 1, Dubai",
+    "area": "Al Barsha 1"
+  }
+]
