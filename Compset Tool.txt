@@ -1,0 +1,65 @@
+Address
+Distance from Hotel (KM)
+Property Type (City/Resort/Beach/Landmark/Shopping/Exhibition)
+REVIEW SCORE
+Booking.com
+Tripadvisor 
+Tripadvisor position
+Facebook
+Brand 
+OVERVIEW
+Classification/Star Rating 
+Opening Year
+Last Renovation
+Affiliation
+Owning Company/Management
+Licensed for Alcohol (Y/N)
+Licensed for Shisha (Y/N)
+STR Rating
+ROOMS
+Total Number of Keys
+"Type of Hotel
+ (Rooms, All Suites, Appartments, Mixed, Condos) - State all applicable"
+"Room Types/Inventory: List all room types stating size and inventory 
+Number of Room Category
+Percent Rooms
+Number of Executive/Club Category 
+Percent Executive/Club Rooms
+Number of Suite Category
+Percent of Suites
+Number of Villa Category
+Percent Villas
+Number of Studio Category
+Percent Studios
+Number of apartmernt Category
+Percent apartments
+Residential (Y/N)
+No. of Apartments / Residences
+
+Bars (list name) - insert raws as required
+
+Lounge/Coffee Shop
+
+MEETINGS & EVENTS
+Total Number of Function Rooms
+Total Function Space (sqm)
+Number of  Ballroom
+Number of Meeting rooms
+Largest Room/Ballroom (sqm)
+Maximum capacity (theater style)
+Minimum capacity 
+FITNESS & SPA
+Spa Name
+Salon Name
+Treatment rooms (#)
+Spa total area (sqm)
+Health Club / Fitness (Y/N)
+OTHER FACILITIES/RETAILS (Y/N/NA)
+Kids Club
+Kid Amenities (specify)
+Swimming Pool (specify number)
+Direct Beach
+Retail shops
+Additional Specify
+Additional Specify
+Additional Specify

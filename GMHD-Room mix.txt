@@ -1,0 +1,12 @@
+Room Type/Sqm	Inventory
+Superior King Room (33sqm)	72
+Deluxe King Room (33sqm)	40
+Club Room (33sqm)	24
+Studio Apartment (54sqm)	20
+Business Suite (58sqm)	32
+Executive Suite ( 65sqm)	34
+One Bedroom Apartment (94sqm)	72
+Family Suite Apartment (94sqm)	10
+Two Bedroom Apartment (111sqm)	33
+Royal Suite	1
+Penthouse	1
