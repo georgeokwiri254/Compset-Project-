@@ -94,7 +94,14 @@ Formatting may be inconsistent from source
       "category": "Luxury",
       "distance_km": 0.24,
       "address": "Hessa Street, Barsha Heights, Al Barsha, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 537,
+      "apartment_ratio": null,
+      "executive_lounge": true,
+      "total_event_space_sqm": 1238,
+      "largest_ballroom_capacity": 165,
+      "meeting_room_count": 16,
+      "restaurant_bar_count": 5
     },
     {
       "id": 2,
@@ -103,7 +110,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 0.14,
       "address": "Hessa Street, Tecom, Al Thanyah 1, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 828,
+      "apartment_ratio": null,
+      "executive_lounge": false,
+      "total_event_space_sqm": null,
+      "largest_ballroom_capacity": 700,
+      "meeting_room_count": 4,
+      "restaurant_bar_count": 4
     },
     {
       "id": 3,
@@ -112,7 +126,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 0.18,
       "address": "Hessa Street, Al Thanya 1, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 288,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": 185.8,
+      "largest_ballroom_capacity": 170,
+      "meeting_room_count": 3,
+      "restaurant_bar_count": 3
     },
     {
       "id": 4,
@@ -121,7 +142,14 @@ Formatting may be inconsistent from source
       "category": "Midscale",
       "distance_km": 0.5,
       "address": "Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 219,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": 0,
+      "largest_ballroom_capacity": 0,
+      "meeting_room_count": 0,
+      "restaurant_bar_count": 3
     },
     {
       "id": 5,
@@ -130,7 +158,14 @@ Formatting may be inconsistent from source
       "category": "Midscale",
       "distance_km": 0.5,
       "address": "TECOM business area, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 126,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": 0,
+      "largest_ballroom_capacity": 0,
+      "meeting_room_count": 0,
+      "restaurant_bar_count": 5
     },
     {
       "id": 6,
@@ -139,7 +174,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 0.8,
       "address": "Barsha Heights, facing Sheikh Zayed Road, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 237,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": null,
+      "largest_ballroom_capacity": 51,
+      "meeting_room_count": 4,
+      "restaurant_bar_count": 2
     },
     {
       "id": 7,
@@ -148,7 +190,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 1.0,
       "address": "1st Al Khail Street, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 915,
+      "apartment_ratio": 0.488,
+      "executive_lounge": false,
+      "total_event_space_sqm": 516,
+      "largest_ballroom_capacity": 146,
+      "meeting_room_count": 7,
+      "restaurant_bar_count": 6
     },
     {
       "id": 8,
@@ -157,7 +206,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 1.0,
       "address": "1st Al Khail Street, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 447,
+      "apartment_ratio": 1,
+      "executive_lounge": false,
+      "total_event_space_sqm": 516,
+      "largest_ballroom_capacity": 146,
+      "meeting_room_count": 7,
+      "restaurant_bar_count": 6
     },
     {
       "id": 9,
@@ -166,7 +222,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 0.7,
       "address": "Barsha Heights (Tecom), Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 650,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": 428,
+      "largest_ballroom_capacity": 171,
+      "meeting_room_count": 4,
+      "restaurant_bar_count": 3
     },
     {
       "id": 10,
@@ -175,7 +238,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 0.8,
       "address": "Al Thanayah 1, Tecom, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 301,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": null,
+      "largest_ballroom_capacity": 24,
+      "meeting_room_count": 1,
+      "restaurant_bar_count": 4
     },
     {
       "id": 11,
@@ -184,7 +254,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 0.8,
       "address": "Barsha Heights (Tecom), Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 152,
+      "apartment_ratio": 0,
+      "executive_lounge": false,
+      "total_event_space_sqm": 0,
+      "largest_ballroom_capacity": 0,
+      "meeting_room_count": 1,
+      "restaurant_bar_count": 7
     },
     {
       "id": 12,
@@ -193,7 +270,14 @@ Formatting may be inconsistent from source
       "category": "Upscale",
       "distance_km": 1.2,
       "address": "Al Saef 1 Street, Barsha Heights, Dubai",
-      "area": "Barsha Heights"
+      "area": "Barsha Heights",
+      "total_room_count": 524,
+      "apartment_ratio": 1,
+      "executive_lounge": false,
+      "total_event_space_sqm": 157,
+      "largest_ballroom_capacity": 157,
+      "meeting_room_count": 1,
+      "restaurant_bar_count": 2
     },
     {
       "id": 13,
