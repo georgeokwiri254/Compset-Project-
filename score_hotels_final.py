@@ -5,26 +5,31 @@ from openpyxl.styles import Font, PatternFill, Alignment
 from sklearn.preprocessing import MinMaxScaler
 
 # Read the Excel file - Features sheet
-excel_file = 'Compset_Analysis_With_ML_Features_Final.xlsx'
+excel_file = 'Compset_Analysis_With_ML_Features_Final 22.xlsx'
 df = pd.read_excel(excel_file, sheet_name='Features', header=None)
 
 print("Reading Features sheet...")
 print(f"Shape: {df.shape}")
 
-# First row contains hotel names
-hotel_names = df.iloc[0, 2:].tolist()  # Skip first 2 columns (GENERAL INFORMATION, NORMALIZATION)
+# First row contains hotel names (starting from column 2)
+hotel_names = df.iloc[0, 2:].tolist()
 print(f"\nHotels found ({len(hotel_names)}):")
 for i, hotel in enumerate(hotel_names, 1):
     print(f"  {i}. {hotel}")
 
-# Create feature name to row index mapping
-feature_rows = {}
-for idx in range(df.shape[0]):
-    feature_name = str(df.iloc[idx, 0]).strip()
-    if pd.notna(df.iloc[idx, 0]) and feature_name:
-        feature_rows[feature_name.lower()] = idx
-
-print(f"\nFeature rows identified: {len(feature_rows)}")
+# Define exact row indices for each feature based on the actual Excel structure
+FEATURE_ROWS = {
+    'star_rating': 4,
+    'booking_rating': 5,
+    'tripadvisor_rating': 6,
+    'distance_km': 2,
+    'total_rooms': 15,  # Total Number of Keys
+    'meeting_space_sqm': 33,  # Total Function Space (sqm)
+    'f_b_outlets': 25,  # Restaurants Count
+    'pool_count': 48,  # Swimming Pool Count
+    'gym': 42,  # Health Club / Fitness (Y/N)
+    'spa': 40,  # Spa Name (if exists, then Y)
+}
 
 # Create a dictionary to store hotel data
 hotels_data = {}
@@ -46,125 +51,92 @@ for hotel in hotel_names:
     }
 
 # Extract data for each hotel
-for col_idx, hotel in enumerate(hotel_names, start=2):  # Start at column 2 (index 2)
+for col_idx, hotel in enumerate(hotel_names, start=2):  # Start at column 2
 
-    # Star Rating
-    for key in ['star rating', 'star_rating']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value) and isinstance(value, (int, float)):
-                hotels_data[hotel]['star_rating'] = float(value)
-                break
+    # Star Rating (Row 4)
+    value = df.iloc[FEATURE_ROWS['star_rating'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['star_rating'] = float(value)
+        except:
+            pass
 
-    # Distance
-    for key in ['distance from hotel (km)', 'distance from hotel', 'distance']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['distance_km'] = float(value)
-                    break
-                except:
-                    pass
+    # Distance (Row 2)
+    value = df.iloc[FEATURE_ROWS['distance_km'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['distance_km'] = float(value)
+        except:
+            pass
 
-    # Total Rooms
-    for key in ['total rooms', 'number of rooms', 'rooms']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['total_rooms'] = float(value)
-                    break
-                except:
-                    pass
+    # Total Rooms (Row 15 - Total Number of Keys)
+    value = df.iloc[FEATURE_ROWS['total_rooms'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['total_rooms'] = float(value)
+        except:
+            pass
 
-    # TripAdvisor Rating
-    for key in ['tripadvisor score', 'tripadvisor rating', 'tripadvisor']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['tripadvisor_rating'] = float(value)
-                    break
-                except:
-                    pass
+    # TripAdvisor Rating (Row 6)
+    value = df.iloc[FEATURE_ROWS['tripadvisor_rating'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['tripadvisor_rating'] = float(value)
+        except:
+            pass
 
-    # Google Rating
-    for key in ['google rating', 'google score', 'google']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['google_rating'] = float(value)
-                    break
-                except:
-                    pass
+    # Booking.com Rating (Row 5)
+    value = df.iloc[FEATURE_ROWS['booking_rating'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['booking_rating'] = float(value)
+        except:
+            pass
 
-    # Booking.com Rating
-    for key in ['booking.com score', 'booking rating', 'booking score']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['booking_rating'] = float(value)
-                    break
-                except:
-                    pass
+    # Meeting Space (Row 33)
+    value = df.iloc[FEATURE_ROWS['meeting_space_sqm'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['meeting_space_sqm'] = float(value)
+        except:
+            pass
 
-    # Meeting Space
-    for key in ['meeting space', 'conference space', 'meeting rooms']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['meeting_space_sqm'] = float(value)
-                    break
-                except:
-                    pass
+    # F&B Outlets (Row 25 - Restaurants Count)
+    value = df.iloc[FEATURE_ROWS['f_b_outlets'], col_idx]
+    if pd.notna(value):
+        try:
+            # Handle special cases like "6-8"
+            if isinstance(value, str) and '-' in value:
+                # Take the average
+                parts = value.split('-')
+                hotels_data[hotel]['f_b_outlets'] = (float(parts[0]) + float(parts[1])) / 2
+            else:
+                hotels_data[hotel]['f_b_outlets'] = float(value)
+        except:
+            pass
 
-    # F&B Outlets
-    for key in ['f&b outlets', 'restaurants', 'dining outlets', 'number of f&b outlets']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                try:
-                    hotels_data[hotel]['f_b_outlets'] = float(value)
-                    break
-                except:
-                    pass
+    # Pool (Row 48)
+    value = df.iloc[FEATURE_ROWS['pool_count'], col_idx]
+    if pd.notna(value):
+        try:
+            hotels_data[hotel]['pool_count'] = float(value)
+        except:
+            pass
 
-    # Pool
-    for key in ['pool', 'swimming pool', 'pools']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                if isinstance(value, (int, float)):
-                    hotels_data[hotel]['pool_count'] = float(value)
-                elif str(value).lower() in ['yes', 'y', 'true', '1']:
-                    hotels_data[hotel]['pool_count'] = 1.0
-                break
+    # Gym (Row 42 - Health Club / Fitness Y/N)
+    value = df.iloc[FEATURE_ROWS['gym'], col_idx]
+    if pd.notna(value):
+        if str(value).upper() in ['Y', 'YES', 'TRUE', '1']:
+            hotels_data[hotel]['gym'] = 1.0
+        elif str(value).upper() in ['N', 'NO', 'FALSE', '0']:
+            hotels_data[hotel]['gym'] = 0.0
 
-    # Gym
-    for key in ['gym', 'fitness center', 'fitness', 'fitness centre']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                if str(value).lower() in ['yes', 'y', 'true', '1']:
-                    hotels_data[hotel]['gym'] = 1.0
-                elif isinstance(value, (int, float)) and value > 0:
-                    hotels_data[hotel]['gym'] = 1.0
-                break
-
-    # Spa
-    for key in ['spa', 'wellness']:
-        if key in feature_rows:
-            value = df.iloc[feature_rows[key], col_idx]
-            if pd.notna(value):
-                if str(value).lower() in ['yes', 'y', 'true', '1']:
-                    hotels_data[hotel]['spa'] = 1.0
-                elif isinstance(value, (int, float)) and value > 0:
-                    hotels_data[hotel]['spa'] = 1.0
-                break
+    # Spa (Row 40 - Spa Name, if exists then Y)
+    value = df.iloc[FEATURE_ROWS['spa'], col_idx]
+    if pd.notna(value) and str(value).strip() and str(value).lower() not in ['no', 'n', 'none', '0', 'nan']:
+        hotels_data[hotel]['spa'] = 1.0
+    else:
+        hotels_data[hotel]['spa'] = 0.0
 
 # Convert to DataFrame
 df_hotels = pd.DataFrame.from_dict(hotels_data, orient='index')
@@ -182,8 +154,7 @@ scoring_features = {
     'total_rooms': {'weight': 0.08, 'higher_better': True},
     'distance_km': {'weight': 0.20, 'higher_better': False},  # Lower distance is better (PROXIMITY BONUS)
     'tripadvisor_rating': {'weight': 0.12, 'higher_better': True},
-    'google_rating': {'weight': 0.12, 'higher_better': True},
-    'booking_rating': {'weight': 0.12, 'higher_better': True},
+    'booking_rating': {'weight': 0.24, 'higher_better': True},  # Combined weight for online ratings (no Google data)
     'meeting_space_sqm': {'weight': 0.08, 'higher_better': True},
     'f_b_outlets': {'weight': 0.05, 'higher_better': True},
     'pool_count': {'weight': 0.04, 'higher_better': True},
@@ -267,26 +238,39 @@ df_hotels_sorted = df_hotels.sort_values('normalized_score', ascending=False)
 
 # Display results
 print("\n" + "="*120)
-print("COMPETITIVE SCORING RESULTS (Ranked for Cosine Similarity)")
+print("COMPETITIVE SCORING RESULTS (Ranked)")
 print("="*120)
 print(df_hotels_sorted[['hotel_name', 'raw_score', 'brand_penalty', 'final_score', 'normalized_score']].to_string())
 
-# Write scores to Excel - add to Features sheet
+# Write scores to Excel - REPLACE the existing scores section
 wb = load_workbook(excel_file)
 ws = wb['Features']
 
-# Find the last row
-last_row = ws.max_row
+# Find where COMPETITIVE SCORES section starts (should be around row 55)
+score_start_row = None
+for row in range(50, 80):
+    cell_value = ws.cell(row=row, column=1).value
+    if cell_value and 'COMPETITIVE SCORES' in str(cell_value):
+        score_start_row = row
+        break
 
-# Add scores section
-score_start_row = last_row + 3
+# If not found, add it after the existing data
+if score_start_row is None:
+    # Find the last row with data in column 1
+    last_row = ws.max_row
+    score_start_row = last_row + 3
+
+# Clear existing score rows (if they exist)
+for row in range(score_start_row, score_start_row + 10):
+    for col in range(1, 20):
+        ws.cell(row=row, column=col).value = None
 
 # Section header
 ws.cell(row=score_start_row, column=1, value="COMPETITIVE SCORES")
 ws.cell(row=score_start_row, column=1).font = Font(bold=True, size=12, color="FFFFFF")
 ws.cell(row=score_start_row, column=1).fill = PatternFill(start_color="0070C0", end_color="0070C0", fill_type="solid")
 
-ws.cell(row=score_start_row, column=2, value="For Cosine Similarity Ranking")
+ws.cell(row=score_start_row, column=2, value="Normalized 0-1 Scale")
 ws.cell(row=score_start_row, column=2).font = Font(italic=True, size=10)
 
 # Score labels
@@ -303,7 +287,7 @@ for label, row_num in score_labels:
     ws.cell(row=row_num, column=1).fill = PatternFill(start_color="D9E1F2", end_color="D9E1F2", fill_type="solid")
 
 # Write scores for each hotel
-for col_idx, hotel_name in enumerate(hotel_names, start=3):  # Start at column 3 (C)
+for col_idx, hotel_name in enumerate(hotel_names, start=2):  # Start at column 2
     hotel_data = df_hotels[df_hotels['hotel_name'] == hotel_name]
 
     if not hotel_data.empty:
@@ -327,7 +311,7 @@ for col_idx, hotel_name in enumerate(hotel_names, start=3):  # Start at column 3
 
 # Save workbook
 wb.save(excel_file)
-print(f"\n[SUCCESS] Scores successfully added to '{excel_file}' in 'Features' sheet")
+print(f"\n[SUCCESS] Scores successfully updated in '{excel_file}' in 'Features' sheet")
 print(f"  Starting at row {score_start_row}")
 
 wb.close()
@@ -352,5 +336,4 @@ print("  3. Weighted sum of normalized features = Raw Score")
 print("  4. Brand penalties applied to Atana and Two Seasons")
 print("  5. Final scores min-max normalized to 0-1 scale")
 print("  6. Higher score = more competitive/similar to Grand Millennium Dubai")
-print("\nReady for Cosine Similarity Ranking!")
 print("="*120)
