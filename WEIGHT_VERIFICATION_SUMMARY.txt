@@ -1,0 +1,218 @@
+================================================================================
+HOTEL_SIMILARITY_ANALYSIS_ENHANCED.IPYNB
+FEATURE WEIGHTS VERIFICATION - CRITICAL FINDINGS
+================================================================================
+
+QUESTION 1: Where is df_weighted created with the feature_weights?
+================================================================================
+ANSWER: Cell 11, Lines 30-32
+
+    df_weighted = df_features.copy()
+    for feature, weight in feature_weights.items():
+        df_weighted[feature] = df_features[feature] * weight
+
+STATUS: CONFIRMED - Weights are properly applied to create df_weighted
+
+
+QUESTION 2: Where is X_weighted defined?
+================================================================================
+ANSWER: Cell 32, Line 2
+
+    X_weighted = df_weighted[all_features].values
+
+STATUS: CONFIRMED - X_weighted correctly comes from df_weighted (which contains weighted values)
+
+
+QUESTION 3: Is ANY scaling applied to X_weighted BEFORE KNN/clustering?
+================================================================================
+ANSWER: NO - NO SCALING DETECTED
+
+Scaling imports are present (Cell 3):
+    from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+BUT they are NEVER used on X_weighted in the KNN/clustering sections.
+
+Verification by section:
+- Cell 24 (PCA):  Uses X_weighted_array (separate variable) - does NOT affect main pipeline
+- Cell 32 (Cosine): X_weighted → cosine_similarity() directly, NO scaling
+- Cell 35 (KNN): X_weighted → knn_model.fit() directly, EXPLICIT comment "without StandardScaler"
+- Cell 39-40 (Ward): X_weighted → linkage() and fit_predict() directly, NO scaling
+- Cell 42-43 (Average): X_weighted → linkage() and fit_predict() directly, NO scaling
+
+STATUS: CONFIRMED - No scaling override detected
+
+
+QUESTION 4: Does KNN use X_weighted without intermediate scaling?
+================================================================================
+ANSWER: YES - VERIFIED
+
+Code from Cell 35, Lines 6-9:
+    knn_model = NearestNeighbors(n_neighbors=k_neighbors+1, metric='cosine')
+    knn_model.fit(X_weighted)  # ✅ Using weighted features directly
+
+Additional context (Cell 35, Lines 1-2):
+    # CORRECTED: Use weighted features directly without StandardScaler
+    # This preserves your business-driven feature importance
+
+STATUS: VERIFIED - KNN uses X_weighted with cosine metric, no scaling
+
+
+QUESTION 5: Does hierarchical clustering use X_weighted without scaling?
+================================================================================
+ANSWER: YES - VERIFIED FOR BOTH METHODS
+
+Ward Linkage (Cell 39-40):
+    linkage_ward = linkage(X_weighted, method='ward')
+    ward_clustering = AgglomerativeClustering(n_clusters=n_clusters_ward, linkage='ward')
+    ward_labels = ward_clustering.fit_predict(X_weighted)  # ✅ Using weighted features
+
+Average Linkage (Cell 42-43):
+    linkage_avg = linkage(X_weighted, method='average')
+    avg_clustering = AgglomerativeClustering(n_clusters=n_clusters_avg, linkage='average')
+    avg_labels = avg_clustering.fit_predict(X_weighted)  # ✅ Using weighted features
+
+STATUS: VERIFIED - Both clustering methods use X_weighted directly, no scaling
+
+
+QUESTION 6: Are there multiple definitions of X_weighted that override each other?
+================================================================================
+ANSWER: NO - ONLY ONE DEFINITION
+
+All X variable definitions in notebook:
+    Cell 24: X_weighted_array = df_weighted[all_features].values  (PCA only)
+    Cell 32: X_weighted = df_weighted[all_features].values        (Main pipeline)
+    Cell 24: X_pca = pca.fit_transform(X_weighted_array)          (PCA derived)
+
+X_weighted is defined ONLY ONCE in Cell 32 and never reassigned.
+X_weighted_array is a SEPARATE variable used only in PCA section.
+
+STATUS: VERIFIED - No conflicting definitions or reassignments
+
+
+================================================================================
+WEIGHT LOSS RISK ASSESSMENT
+================================================================================
+
+Risk Factor 1: StandardScaler/MinMaxScaler Override
+Result: NO RISK - Scaling imports present but never applied to X_weighted
+
+Risk Factor 2: Variable Reassignment
+Result: NO RISK - X_weighted defined once, never reassigned
+
+Risk Factor 3: Using Wrong Variable
+Result: NO RISK - All KNN/clustering operations use X_weighted explicitly
+
+Risk Factor 4: PCA Preprocessing Leakage
+Result: NO RISK - PCA uses separate X_weighted_array variable
+
+Risk Factor 5: Evaluation Using Unweighted Features
+Result: NO RISK - All metrics (silhouette, ARI) use X_weighted
+
+OVERALL ASSESSMENT: WEIGHTS ARE FULLY PRESERVED AND PROPERLY APPLIED
+
+
+================================================================================
+FEATURE WEIGHT TIERS (15 Total Features)
+================================================================================
+
+TIER 1 - CRITICAL SUCCESS FACTORS (6 features, weight: 2.0-2.4)
+  Star Points                 2.4  (HIGHEST)
+  TripAdvisor Points          2.0
+  Booking.com Points          2.0
+  Total Keys Points           2.0
+  Meeting Points              2.0
+  F&B Points                  2.0
+
+TIER 2 - HIGH IMPACT FACTORS (2 features, weight: 1.5-1.7)
+  Opening Points              1.7
+  Distance Points             1.5
+
+TIER 3 - MODERATE IMPACT (2 features, weight: 1.2-1.3)
+  Room Mix Points             1.3
+  Renovation Points           1.2
+
+TIER 4 - BASIC AMENITIES (5 features, weight: 0.4-0.5)
+  Pool (1/0)                  0.5
+  Gym (1/0)                   0.5
+  Spa (1/0)                   0.5
+  Sauna (1/0)                 0.5
+  Kids Club (1/0)             0.4
+
+These weights FLOW THROUGH the entire analysis pipeline without loss.
+
+
+================================================================================
+PIPELINE FLOW VERIFICATION
+================================================================================
+
+Step 1: Feature Weight Definition
+        Location: Cell 11, Lines 1-29
+        Status: VERIFIED - 15 features defined with business-driven weights
+
+Step 2: Apply Weights to Features
+        Location: Cell 11, Lines 30-32
+        Input: df_features (original)
+        Output: df_weighted (each column × weight)
+        Status: VERIFIED - Weights embedded in df_weighted
+
+Step 3: Extract Weighted Values
+        Location: Cell 32, Line 2
+        Input: df_weighted
+        Output: X_weighted = array of weighted features
+        Status: VERIFIED - Correct extraction from weighted dataframe
+
+Step 4: KNN Model
+        Location: Cell 35, Lines 6-9
+        Input: X_weighted
+        Metric: cosine (preserves relative weights)
+        Scaling: NONE
+        Status: VERIFIED - Uses weighted features directly
+
+Step 5a: Hierarchical Clustering (Ward)
+        Location: Cell 40, Line 4
+        Input: X_weighted
+        Linkage: ward
+        Scaling: NONE
+        Status: VERIFIED - Uses weighted features directly
+
+Step 5b: Hierarchical Clustering (Average)
+        Location: Cell 43, Line 4
+        Input: X_weighted
+        Linkage: average
+        Scaling: NONE
+        Status: VERIFIED - Uses weighted features directly
+
+Step 6: Model Evaluation
+        Location: Cell 51-52
+        Input: X_weighted with labels
+        Metrics: Silhouette Score, ARI
+        Status: VERIFIED - Evaluation respects weighted features
+
+
+================================================================================
+FINAL VERDICT
+================================================================================
+
+STATUS: FEATURE WEIGHTS ARE BEING PROPERLY APPLIED
+
+The notebook implements a correct and robust weighted feature pipeline:
+
+1. WEIGHTS PROPERLY DEFINED - 15 features across 4 strategic tiers
+2. WEIGHTS PROPERLY APPLIED - df_weighted multiply operation correct
+3. WEIGHTS PROPERLY EXTRACTED - X_weighted comes from df_weighted
+4. WEIGHTS PRESERVED IN KNN - Cosine metric used, no scaling
+5. WEIGHTS PRESERVED IN CLUSTERING - Direct application, no scaling
+6. NO VARIABLE CONFLICTS - Single X_weighted definition
+7. NO SCALING OVERRIDE - StandardScaler/MinMaxScaler not applied
+8. NO EVALUATION CONFLICTS - Metrics use weighted features
+
+CONCLUSION: The user's concern about weights being lost appears to be UNFOUNDED.
+The implementation is correct and safeguarded.
+
+If results seem unexpected, investigate:
+- Whether weight values are appropriate for the business case
+- Data quality in the original df_features
+- Interpretation of similarity/cluster results
+- NOT the weight application mechanism (it's working correctly)
+
+================================================================================
